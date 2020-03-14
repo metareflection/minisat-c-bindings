@@ -82,7 +82,7 @@ int          minisat_solve_commit    (minisat_solver *s){ return s->solve(s->ass
 minisat_lbool minisat_limited_solve_commit (minisat_solver *s){ return toC(s->solveLimited(s->assumps)); }
 
 int          minisat_okay            (minisat_solver *s){ return s->okay(); }
-void         minisat_setPolarity     (minisat_solver *s, minisat_Var v, minisat_lbool lb){ s->setPolarity(v, fromC(lb)); }
+  void         minisat_setPolarity     (minisat_solver *s, minisat_Var v, int lb){ s->setPolarity(v, lb); }
 void         minisat_setDecisionVar  (minisat_solver *s, minisat_Var v, int b){ s->setDecisionVar(v, b); }
 minisat_lbool minisat_value_Var      (minisat_solver *s, minisat_Var x){ return toC(s->value(x)); }
 minisat_lbool minisat_value_Lit      (minisat_solver *s, minisat_Lit p){ return toC(s->value(toLit(p))); }

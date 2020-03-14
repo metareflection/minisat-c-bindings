@@ -124,7 +124,7 @@ $(BUILD_DIR)/dynamic/%.o:	%.cc
 $(BUILD_DIR)/dynamic/lib/$(MBINDC_DLIB).$(SOMAJOR).$(SOMINOR)$(SORELEASE):
 	$(ECHO) echo Linking Shared Library: $@
 	$(VERB) mkdir -p $(dir $@)
-	$(VERB) $(CXX) -o $@ -shared -Wl,-soname,$(MBINDC_DLIB).$(SOMAJOR) $^ $(MBINDC_LDFLAGS)
+	$(VERB) $(CXX) -o $@ -shared -Wl, $^ $(MBINDC_LDFLAGS)
 
 install:	install-headers install-lib install-lib-static
 install-static:	install-headers install-lib-static
