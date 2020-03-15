@@ -19,11 +19,11 @@ OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWA
 **************************************************************************************************/
 
 #include <stdlib.h>
-#include "minisat/simp/SimpSolver.h"
+#include "minisat/core/Solver.h"
 
 using namespace Minisat;
 
-struct minisat_solver_t : public SimpSolver { 
+struct minisat_solver_t : public Solver { 
     vec<Lit> clause;
     vec<Lit> assumps;
 };
@@ -110,9 +110,9 @@ void minisat_interrupt(minisat_solver* s) {s->interrupt (); }
 void minisat_clearInterrupt(minisat_solver* s) {s->clearInterrupt (); }
 
 // SimpSolver methods:
-void         minisat_setFrozen       (minisat_solver* s, minisat_Var v, minisat_bool b) { s->setFrozen(v, b); }
-minisat_bool minisat_isEliminated    (minisat_solver* s, minisat_Var v) { return s->isEliminated(v); }
-minisat_bool minisat_eliminate       (minisat_solver* s, minisat_bool turn_off_elim){ return s->eliminate(turn_off_elim); }
+//void         minisat_setFrozen       (minisat_solver* s, minisat_Var v, minisat_bool b) { s->setFrozen(v, b); }
+//minisat_bool minisat_isEliminated    (minisat_solver* s, minisat_Var v) { return s->isEliminated(v); }
+//minisat_bool minisat_eliminate       (minisat_solver* s, minisat_bool turn_off_elim){ return s->eliminate(turn_off_elim); }
 
 // Convenience functions for actual c-programmers (not language interfacing people):
 //
